@@ -1,0 +1,26 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [master, main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+        working-directory: web
+      - name: Typecheck + build site
+        run: npm run build
+        working-directory: web
+      - name: Validate JSON-LD on every page
+        run: python3 scripts/check_schema.py web/dist
+      - name: TikTok report runs on sample data
+        run: python3 scripts/tiktok_report.py tiktok/samples/tiktok_export_sample.csv --log tiktok/samples/content_log_sample.csv --out /tmp/report.md && head -5 /tmp/report.md

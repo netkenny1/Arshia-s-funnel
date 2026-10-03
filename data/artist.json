@@ -1,0 +1,63 @@
+{
+  "_readme": "Single source of truth. The site, its structured data and llms.txt are generated from this. Leave a field empty ('') and it is simply not shown.",
+  "stage_name": "arshia.wav",
+  "name": "Arshia",
+  "role": "DJ",
+  "city": "Dubai",
+  "country": "United Arab Emirates",
+  "country_code": "AE",
+  "one_liner": "House. Dubai.",
+  "bio": "arshia.wav is a DJ based in Dubai playing house, afro house and melodic sets at Moe's on the 5th and Soho Garden.",
+  "genres": ["House", "Afro House", "Melodic House"],
+  "instagram": "arshia.wav",
+  "tiktok": "arshia.wav",
+  "soundcloud_url": "",
+  "soundcloud_embed_track_url": "",
+  "resident_advisor_url": "",
+  "spotify_artist_url": "",
+  "email_bookings": "",
+  "whatsapp_e164": "",
+  "site_url": "https://netkenny1.github.io/Arshia-s-funnel",
+  "guestlist_endpoint": "",
+  "channels": {
+    "whatsapp_channel_url": "",
+    "instagram_broadcast_url": "",
+    "telegram_channel_url": ""
+  },
+  "tracking": {
+    "meta_pixel_id": "",
+    "tiktok_pixel_id": ""
+  },
+  "venues": [
+    {
+      "id": "moes",
+      "name": "Moe's on the 5th",
+      "url": "https://www.instagram.com/moesonthe5th/",
+      "address": {
+        "streetAddress": "5th Floor, Sheraton Grand Hotel, Sheikh Zayed Road",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": { "latitude": 25.2273, "longitude": 55.2886 }
+    },
+    {
+      "id": "soho",
+      "name": "Soho Garden",
+      "url": "https://sohogardendxb.com/",
+      "address": {
+        "streetAddress": "Meydan Racecourse, Al Meydan Road, Nad Al Sheba",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": { "latitude": 25.1566, "longitude": 55.3032 }
+    }
+  ],
+  "faq": [
+    { "q": "Who is arshia.wav?", "a": "A DJ based in Dubai playing house, afro house and melodic sets at Moe's on the 5th and Soho Garden." },
+    { "q": "Where does arshia.wav play?", "a": "Moe's on the 5th (Sheraton Grand, Sheikh Zayed Road) and Soho Garden (Meydan), Dubai. Dates are announced on Instagram @arshia.wav and to the list." },
+    { "q": "How do I get on arshia.wav's guest list?", "a": "Join the list on arshia.wav's site with your name, Instagram and WhatsApp. Nights are sent out before each date." },
+    { "q": "How do I book arshia.wav?", "a": "Email the bookings address on the site or message @arshia.wav on Instagram." }
+  ]
+}

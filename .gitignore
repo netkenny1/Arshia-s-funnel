@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+tiktok/exports/*.csv
+tiktok/reports/*.md
+!tiktok/samples/
+.DS_Store

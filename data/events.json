@@ -1,0 +1,4 @@
+{
+  "_readme": "Optional. Add a gig only when it is confirmed; it then appears on the site and in structured data. No gigs = the site says dates come via the list. Dubai time (+04:00).",
+  "events": []
+}
