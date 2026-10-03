@@ -9,11 +9,17 @@
  *  4. Copy the Web app URL into data/artist.json -> "guestlist_endpoint". Rebuild / push.
  *  5. Optional: set WHATSAPP_WEBHOOK to a WhatsApp Cloud API or Make/Zapier webhook to auto-confirm.
  *
+ * The sheet IS the list. Export the phone column to build the Meta Custom Audience / lookalike (playbook 04).
+ *
  * Columns written: timestamp, name, instagram, phone, event, party_size, consent, utm_source, utm_medium,
  * utm_campaign, utm_content, referrer, landing, first_touch (json), status
  */
 var SHEET_NAME = 'list';
 var WHATSAPP_WEBHOOK = ''; // optional
+// Optional: every new sign-up is relayed to a private Telegram chat/channel so Arshia (and the door) see the
+// list live on their phones. Create a bot with @BotFather, add it to a private channel, paste the token and chat id.
+var TELEGRAM_BOT_TOKEN = '';
+var TELEGRAM_DOOR_CHAT_ID = '';
 
 function doPost(e) {
   var data = {};
@@ -40,6 +46,14 @@ function doPost(e) {
   sh.appendRow([new Date(), data.name, ig, normalizePhone(data.phone), data.event, data.party_size, data.consent ? 'yes' : 'no',
                 a.utm_source || '', a.utm_medium || '', a.utm_campaign || '', a.utm_content || '', a.referrer || '', a.landing || '',
                 a.first_touch ? JSON.stringify(a.first_touch) : '', 'new']);
+
+  if (TELEGRAM_BOT_TOKEN && TELEGRAM_DOOR_CHAT_ID) {
+    try {
+      var src = a.utm_source ? ' · via ' + a.utm_source + (a.utm_content ? '/' + a.utm_content : '') : '';
+      UrlFetchApp.fetch('https://api.telegram.org/bot' + TELEGRAM_BOT_TOKEN + '/sendMessage', { method: 'post', contentType: 'application/json',
+        payload: JSON.stringify({ chat_id: TELEGRAM_DOOR_CHAT_ID, text: '+ ' + data.name + ' @' + ig + ' · ' + normalizePhone(data.phone) + src, disable_notification: true }) });
+    } catch (err) {}
+  }
 
   if (WHATSAPP_WEBHOOK) {
     try {

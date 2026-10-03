@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Parse every JSON-LD block in site/**/*.html and fail if any is invalid or missing required keys.
+"""Parse every JSON-LD block in <dir>/**/*.html (default web/dist) and fail if any is invalid or missing required keys.
 Cheap guard so a typo in data/*.json never ships broken structured data."""
 import json, re, sys
 from pathlib import Path
@@ -10,7 +10,7 @@ REQUIRED = {
     "BreadcrumbList": ["itemListElement"],
     "WebSite": ["name", "url"],
 }
-site = Path(__file__).resolve().parents[1] / "site"
+site = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1] / "web" / "dist"
 bad = 0; total = 0
 for f in sorted(site.rglob("*.html")):
     blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', f.read_text(encoding="utf-8"), re.S)

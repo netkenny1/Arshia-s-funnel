@@ -4,21 +4,21 @@ Full mechanics in `tiktok/README.md`. This is the strategy layer.
 
 ## Cadence: 3-2-1 per week, 7 shot in one night
 
-- **3 set clips** (crowd reaction, booth POV, transition reveal). Shot on his nights. These are the growth engine.
-- **2 Dubai-intent videos** ("if you're in Dubai this weekend", "ID of the song from Saturday"). These catch TikTok search.
-- **1 face video** (talking head, 15s: what he's playing this week, guest list open). Builds the person, not just the set.
+- **3 track-ID clips** from the night (the record, the moment, the ID in the caption). This is what house people save and share.
+- **2 transitions** (15s, the mix point, no talking).
+- **1 short talking clip** (what he's digging this week, or "the list is open"). Builds the person, not just the set.
 - **+1 explore slot** the report assigns: a hook type he hasn't tried.
 
 Shoot all seven in one night with a phone on a small tripod behind the decks and a friend doing crowd pans. Posting is spread Mon–Sun.
 
 ## Hook rules (first 2 seconds decide everything)
 
-1. On-screen text in frame one, 5–8 words, states the payoff: "the drop that cleared the bar at 1am".
-2. Movement in frame one. Crowd, hands, lights. Never a static logo.
+1. On-screen text in frame one, 3–8 words, says what the record or the mix is. No hype words.
+2. Movement in frame one: hands on the mixer, the room, lights. Never a static logo.
 3. Venue name spoken or written in the first 3 seconds. TikTok's search index reads on-screen text and audio.
 4. The payoff lands by second 6. Loop the ending back to the start for completion rate.
 
-Bank of 40 hooks in `content/hooks.md`, grouped by the `hook_type` labels the report uses.
+Hook bank in `content/hooks.md`, grouped by the `hook_type` labels the report uses.
 
 ## TikTok search optimisation (this is "SEO" inside TikTok)
 
@@ -37,12 +37,12 @@ TikTok decides location relevance from (a) where the account is used, (b) where 
 
 ## Promote: AED 40/day on winners only
 
-TikTok Promote (in-app) is boosting, not an ad campaign. Use it only on videos the report flagged as WINNER, goal "website visits" → guest list page, location Dubai, age 21–34, 3 days. Watch cost per site visit; under AED 1.50 is good for nightlife. Kill at day 2 if it's over AED 3.
+TikTok Promote (in-app) is boosting, not an ad campaign. Use it only on videos the report flagged as WINNER, goal "website visits" → the site, location Dubai, age 23–38, 3 days. Watch cost per site visit; under AED 1.50 is good for nightlife. Kill at day 2 if it's over AED 3.
 
 ## Instagram
 
 Reels: same videos, same day, trimmed to 15s if longer. Instagram's recommendation now weights sends-per-reach like TikTok. Cover frame = the on-screen hook text.
-Stories: guest list sticker link every night he plays, from 4pm. Countdown sticker the day before. Reshare every tagged story from the night the next morning (this is the UGC loop that makes people want to be tagged next time).
+Stories: link sticker to the site on the day. Reshare every tagged story the next morning.
 Collab posts with the venue account for every set. Doubles reach, zero cost, and co-occurrence of names feeds the GEO side.
 
 ## Weekly loop (15 min)

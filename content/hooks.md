@@ -1,62 +1,42 @@
-# Hook bank (first 2 seconds, on-screen text)
+# Hooks (first frame text) — house scene
 
-Labelled with the `hook_type` values the report uses so you can log them consistently.
-
-## crowd_reaction
-1. the moment the whole rooftop lost it
-2. POV: the drop hits at Moe's at 1am
-3. nobody expected this transition
-4. Sheikh Zayed Road, 1:14am, this happened
-5. this is why I play the last hour
-
-## pov_dj_booth
-6. POV: you're in the booth with me at Soho Garden
-7. what I see from the decks at midnight
-8. booth cam: last 30 seconds of my set
-9. the view from the 5th floor at 2am
-10. what the DJ sees when the song you requested comes on
-
-## transition_reveal
-11. wait for the transition
-12. I mixed [A] into [B] and it shouldn't work
-13. the edit everyone keeps asking for
-14. afro house into R&B, don't ask how
-15. the 8 bars that saved the night
-
-## dubai_hook
-16. if you're in Dubai this weekend, this is where to be
-17. the best rooftop sound on Sheikh Zayed Road rn
-18. Dubai Saturday > any other Saturday
-19. new to Dubai? start here
-20. things to do in Dubai this Thursday: this
-
-## guestlist_cta
-21. I put 20 people on the list every week, here's how
-22. guest list is open for Friday, link in bio
-23. on the list, not in the queue
-24. your Thursday plan, sorted (link in bio)
-25. comment "list" and I'll DM you the link
+Keyed to the `hook_type` labels in `tiktok/content_log.csv`. The rule: say something a house person wants to know. Never hype.
 
 ## song_id
-26. this is the most Shazamed song of the month at Moe's
-27. ID: the afro house track from Saturday
-28. the song you Shazamed at 1:12am
-29. the track I can't stop opening with
-30. you asked for the ID 40 times. here.
+- ID: the afro house edit from Saturday
+- the track everyone DM'd me about
+- ID in caption
+- this one isn't out yet
+- 1:12am, this record
+
+## transition_reveal
+- the mix point
+- [track A] → [track B]
+- 32 bars, no talking
+- how I get out of a vocal
+- key change you didn't notice
+
+## pov_dj_booth
+- Soho Garden, 11pm, from the booth
+- 5th floor, last hour
+- what the room sounds like from here
+
+## dubai_hook
+- house in Dubai this weekend: here
+- rooftop on SZR, house all night
+- Meydan, Saturday
+
+## guestlist_cta
+- the list is open
+- on the list, not in the queue
+- Thursday · list closes 9
 
 ## day_in_life
-31. a Thursday as a Dubai DJ, from crate digging to 2am
-32. what a resident DJ actually does before doors
-33. soundcheck to last song in 20 seconds
-34. how I build a set for a rooftop vs a club
-35. the 3 songs I test every crowd with
+- digging for Thursday
+- building the first hour
+- the three records I open with
 
-## controversy
-36. unpopular opinion: Dubai crowds are better than Ibiza for this
-37. things promoters won't tell you about guest list
-38. DJs who play the same 10 songs, this is for you
-39. the request I will never play
-40. why I don't do a "big room" set at Moe's
+## crowd_reaction (B-roll only, under a track ID; not a hook)
+- never as the first frame
 
-## Writing new ones
-Payoff in ≤8 words. A place or a time makes it real ("1am", "5th floor"). A "you" makes it personal. Never start with his name; the name is in the caption and the bio.
+Captions: `[hook]. [venue], Dubai. [genre].` + 3–5 tags: #afrohouse #housemusic #dubai #sohogardendxb #moesonthe5th. Say "Dubai" out loud in any talking clip.

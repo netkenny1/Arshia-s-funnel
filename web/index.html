@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<!--HEAD-->
+</head>
+<body>
+<div id="app" class="app" data-base="%BASE_URL%">
+  <header class="top">
+    <a class="wordmark" href="#top" data-word>arshia.wav</a>
+    <nav class="top-nav">
+      <a href="#where">Where</a>
+      <a href="#listen" data-if="listen">Listen</a>
+      <a href="#list">List</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1 class="hero-line" data-split data-text="one_liner"></h1>
+      <p class="hero-sub" data-reveal data-text="sub"></p>
+    </section>
+
+    <section class="block" id="where">
+      <p class="label" data-reveal>Where</p>
+      <ul class="venues" data-venues></ul>
+    </section>
+
+    <section class="block" id="next" data-if="next">
+      <p class="label" data-reveal>Next</p>
+      <ul class="events" data-events></ul>
+    </section>
+
+    <section class="block" id="listen" data-if="listen">
+      <p class="label" data-reveal>Listen</p>
+      <div class="embed" data-embed></div>
+    </section>
+
+    <section class="block" id="list">
+      <p class="label" data-reveal>The list</p>
+      <p class="list-copy" data-reveal>Name, Instagram, WhatsApp. Dates come to you before anyone else.</p>
+      <form class="form" id="list-form" novalidate data-reveal>
+        <input name="name" placeholder="Name" autocomplete="given-name" required>
+        <input name="instagram" placeholder="@instagram" autocomplete="off" required>
+        <input name="phone" placeholder="+971 5x xxx xxxx" inputmode="tel" autocomplete="tel" required>
+        <input name="_hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit"><span>Join</span></button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="fine">You'll get a message before each night. Leave any time.</p>
+      </form>
+      <ul class="channels" data-channels></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <ul class="links" data-links></ul>
+    <p class="fine" data-footer></p>
+  </footer>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

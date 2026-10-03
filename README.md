@@ -1,42 +1,33 @@
-# arshia.wav — growth funnel
+# arshia.wav — the system
 
-Everything needed to push **arshia.wav** (DJ, Dubai · Moe's on the 5th · Soho Garden) from zero web presence to a name AI engines, Google, TikTok and a WhatsApp list all agree on.
+Goal: make **arshia.wav** (DJ, Dubai · Moe's on the 5th · Soho Garden) known across the Dubai house scene, and build a list of those people he can message before every night.
 
-Start with [`playbooks/00-strategy.md`](playbooks/00-strategy.md). Do [`playbooks/05-week-1-checklist.md`](playbooks/05-week-1-checklist.md).
+Read [`playbooks/00-strategy.md`](playbooks/00-strategy.md) first. Then [`playbooks/04-right-audience.md`](playbooks/04-right-audience.md). Then do [`playbooks/05-week-1-checklist.md`](playbooks/05-week-1-checklist.md).
 
-## What's here
+## Pieces
 
-| Piece | Where | Status |
+| | Where | Status |
 |---|---|---|
-| Entity hub site with schema.org JSON-LD, FAQ, events, guest list form, press kit, `llms.txt`, sitemap | `site/` (built from `data/` + `templates/` by `scripts/build_site.py`) | built, tested |
-| Free guest-list backend (Google Sheet + attribution + de-dupe) | `scripts/guestlist_apps_script.gs` | built, 5-min setup |
-| TikTok/Reels iteration engine: export CSV + annotation log → winners/kills + next 7-video shoot list | `scripts/tiktok_report.py`, `tiktok/` | built, sample run in `tiktok/samples/report_sample.md` |
-| GitHub Pages deploy + nightly rebuild, PR checks | `.github/workflows/` | built |
-| Playbooks: GEO/AI SEO, TikTok loop, Dubai geo-targeting + automations, crowd curation, week 1 | `playbooks/` | written |
-| Hook bank, WhatsApp/DM scripts, outreach templates, creative brief | `content/` | written |
+| One-page site: name, where, listen, the list. Structured data (schema.org) and `llms.txt` underneath so Google and AI engines know who he is. Restrained motion. | `web/` (Vite + TypeScript + GSAP + Lenis), content from `data/artist.json` | built, QA'd |
+| The list: Google Sheet backend with source attribution, de-dupe, Telegram door-channel relay | `scripts/guestlist_apps_script.gs` | built, 5-min setup |
+| Content loop: TikTok/IG export + annotation log → what the house crowd finishes and shares → next 7 clips | `scripts/tiktok_report.py`, `tiktok/` | built, sample in `tiktok/samples/` |
+| Reach: Meta Ads through Claude (official Meta Ads MCP), pixel, retargeting, lookalikes, free scene channels, UAE permit | `playbooks/03-reach.md`, `04-right-audience.md` | written |
+| Deploy: GitHub Pages, nightly rebuild, PR checks | `.github/workflows/` | built |
 
-## Run it
-
-```bash
-python3 scripts/build_site.py            # data/*.json -> site/   (warns on every TODO left)
-python3 scripts/check_schema.py          # every JSON-LD block parses + has required keys
-python3 scripts/tiktok_report.py tiktok/exports/<date>.csv   # weekly report -> tiktok/reports/
-```
-
-Local preview (the site is built for the `/Arshia-s-funnel/` path GitHub Pages uses):
+## Run
 
 ```bash
-mkdir -p /tmp/www && ln -sfn "$PWD/site" /tmp/www/Arshia-s-funnel && (cd /tmp/www && python3 -m http.server 8765)
-# open http://localhost:8765/Arshia-s-funnel/
+cd web && npm ci && npm run build        # typecheck + build -> web/dist (reads ../data/*.json)
+python3 scripts/check_schema.py web/dist # every JSON-LD block valid
+cd web && npm run dev                    # local, http://localhost:5173
+python3 scripts/tiktok_report.py tiktok/exports/<date>.csv
 ```
 
 ## Deploy
 
-1. GitHub → Settings → Pages → Source: **GitHub Actions**.
-2. Merge to `master`. The workflow validates, builds and deploys to `https://netkenny1.github.io/Arshia-s-funnel/`.
-3. Custom domain later: set `site_url` in `data/artist.json`, add `site/CNAME`, set the domain in Pages settings.
+1. GitHub → Settings → Pages → Source: **GitHub Actions**. Merge to `master`.
+2. Live at `https://netkenny1.github.io/Arshia-s-funnel/`. Custom domain: set `site_url` in `data/artist.json`, add `web/public/CNAME`, set it in Pages settings.
 
-## Arshia's two files
+## The one file Arshia edits
 
-- `data/artist.json` — who he is, where he plays, FAQ, links, WhatsApp, guest list endpoint. Every `TODO` shows up as a build warning.
-- `data/events.json` — gigs. `status: confirmed` publishes with `MusicEvent` schema; `draft` stays hidden; `cancelled` emits `EventCancelled`.
+`data/artist.json`: bio, genres, links, WhatsApp, pixel IDs, channel links, the list endpoint. Empty string = not shown. `data/events.json` is optional; add a date only when it's confirmed.

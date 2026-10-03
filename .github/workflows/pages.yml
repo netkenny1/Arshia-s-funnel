@@ -3,11 +3,10 @@ name: Build and deploy site
 on:
   push:
     branches: [master, main]
-    paths: ["data/**", "templates/**", "scripts/build_site.py", ".github/workflows/pages.yml"]
+    paths: ["data/**", "web/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
   schedule:
-    # Rebuild nightly (Dubai midnight) so past events roll off and "upcoming" stays honest
-    - cron: "0 20 * * *"
+    - cron: "0 20 * * *"   # nightly (Dubai midnight): past dates roll off
 
 permissions:
   contents: read
@@ -23,15 +22,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
-      - name: Validate data and build
-        run: python3 scripts/build_site.py
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+        working-directory: web
+      - run: npm run build
+        working-directory: web
+      - run: python3 scripts/check_schema.py web/dist
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: web/dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
