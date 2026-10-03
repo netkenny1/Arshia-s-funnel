@@ -20,6 +20,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      pages_enabled: ${{ steps.pages.outputs.enabled }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,12 +34,26 @@ jobs:
       - run: npm run build
         working-directory: web
       - run: python3 scripts/check_schema.py web/dist
+      - name: Is GitHub Pages enabled?
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::GitHub Pages is not enabled yet (Settings -> Pages -> Source: GitHub Actions). Build and validation passed; deploy skipped."
+          fi
       - uses: actions/configure-pages@v5
+        if: steps.pages.outputs.enabled == 'true'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.pages.outputs.enabled == 'true'
         with:
           path: web/dist
   deploy:
     needs: build
+    if: needs.build.outputs.pages_enabled == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
