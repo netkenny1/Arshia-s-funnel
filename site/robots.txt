@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netkenny1.github.io/Arshia-s-funnel/sitemap.xml

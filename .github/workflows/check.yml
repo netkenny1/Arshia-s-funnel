@@ -1,0 +1,21 @@
+name: Check
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [master, main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate data + build site
+        run: python3 scripts/build_site.py
+      - name: Validate JSON-LD parses on every page
+        run: python3 scripts/check_schema.py
+      - name: TikTok report runs on sample data
+        run: python3 scripts/tiktok_report.py tiktok/samples/tiktok_export_sample.csv --log tiktok/samples/content_log_sample.csv --out /tmp/report.md && head -20 /tmp/report.md

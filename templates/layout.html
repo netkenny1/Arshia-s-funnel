@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta property="og:type" content="{{og_type}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:locale" content="en_AE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="geo.region" content="AE-DU">
+<meta name="geo.placename" content="Dubai">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ctext x='32' y='42' font-family='Inter,Arial' font-size='28' font-weight='800' text-anchor='middle' fill='%23e9ff3f'%3E%E2%80%A2w%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="{{base}}/assets/style.css">
+{{jsonld}}
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="{{base}}/">arshia<span>.wav</span></a>
+  <nav>
+    <a href="{{base}}/events/">Events</a>
+    <a href="{{base}}/press/">Press</a>
+    <a class="cta" href="{{base}}/guestlist/">Guest list</a>
+  </nav>
+</header>
+<main>
+{{content}}
+</main>
+<footer class="foot">
+  <div>
+    <strong>arshia.wav</strong> · DJ · Dubai, UAE<br>
+    Moe's on the 5th · Soho Garden
+  </div>
+  <div class="links">
+    <a href="https://www.instagram.com/{{instagram}}/" rel="me">Instagram</a>
+    <a href="https://www.tiktok.com/@{{tiktok}}" rel="me">TikTok</a>
+    {{extra_links}}
+  </div>
+  <div class="tiny">Built {{built}} · <a href="{{base}}/llms.txt">llms.txt</a></div>
+</footer>
+<script>window.ARSHIA = {{config_json}};</script>
+<script src="{{base}}/assets/app.js" defer></script>
+</body>
+</html>

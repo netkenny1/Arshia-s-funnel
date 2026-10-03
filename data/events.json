@@ -1,0 +1,17 @@
+{
+  "_readme": "One object per gig. Only events with status 'confirmed' are published and get Event schema. Dates are local Dubai time (UTC+4). Keep past events, the build script hides them but Google and AI engines like a history. Replace the sample row with real dates.",
+  "events": [
+    {
+      "id": "sample-moes",
+      "status": "draft",
+      "name": "arshia.wav at Moe's on the 5th",
+      "venue_id": "moes",
+      "start": "2026-10-09T23:00:00+04:00",
+      "end": "2026-10-10T02:00:00+04:00",
+      "description": "Open-format rooftop set on Sheikh Zayed Road. Guest list closes 9pm.",
+      "guestlist_open": true,
+      "ticket_url": "",
+      "image": ""
+    }
+  ]
+}

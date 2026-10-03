@@ -1,0 +1,91 @@
+{
+  "_readme": "Single source of truth for Arshia's entity facts. Every page, JSON-LD block, llms.txt and sitemap is generated from this file. Fields starting with TODO are placeholders the build script will warn about.",
+  "name": "Arshia",
+  "stage_name": "arshia.wav",
+  "legal_name_public": false,
+  "tagline": "Dubai DJ. Resident sounds at Moe's on the 5th and Soho Garden.",
+  "short_bio": "arshia.wav is a Dubai-based DJ playing regular nights at Moe's on the 5th (Sheraton Grand, Sheikh Zayed Road) and Soho Garden (Meydan). Expect open-format sets built for the dancefloor: house grooves, afro and latin edits and hip-hop and R&B drops, mixed live.",
+  "long_bio": "TODO: 120-180 words in Arshia's voice. Where he's from, how he started, what a set of his feels like, the two residencies, and what's next. AI engines quote this almost verbatim, so make every sentence a fact you'd be happy to see repeated.",
+  "genres": ["House", "Afro House", "Hip-Hop", "R&B", "Open Format"],
+  "based_in": {
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "country_code": "AE"
+  },
+  "instagram": "arshia.wav",
+  "tiktok": "arshia.wav",
+  "soundcloud": "TODO:  create soundcloud.com/arshiawav and paste the URL here",
+  "spotify_artist_url": "",
+  "youtube": "",
+  "email_bookings": "TODO: bookings@arshiawav.com or a Gmail you control",
+  "whatsapp_e164": "TODO: 9715XXXXXXXX (no plus sign, no spaces)",
+  "site_url": "https://netkenny1.github.io/Arshia-s-funnel",
+  "guestlist_endpoint": "",
+  "residencies": [
+    {
+      "id": "moes",
+      "venue": "Moe's on the 5th",
+      "venue_short": "Moe's",
+      "address": {
+        "streetAddress": "5th Floor, Sheraton Grand Hotel, Sheikh Zayed Road",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {"latitude": 25.2273, "longitude": 55.2886},
+      "url": "https://www.instagram.com/moesonthe5th/",
+      "typical_nights": "TODO: e.g. Thursdays and Saturdays",
+      "set_time": "TODO: e.g. 11pm - 2am",
+      "vibe": "Rooftop lounge-club on Sheikh Zayed Road with skyline views. Dressy crowd, table culture, open-format music."
+    },
+    {
+      "id": "soho",
+      "venue": "Soho Garden",
+      "venue_short": "Soho Garden",
+      "address": {
+        "streetAddress": "Meydan Racecourse, Al Meydan Road, Nad Al Sheba",
+        "addressLocality": "Dubai",
+        "addressRegion": "Dubai",
+        "addressCountry": "AE"
+      },
+      "geo": {"latitude": 25.1566, "longitude": 55.3032},
+      "url": "https://sohogardendxb.com/",
+      "typical_nights": "TODO: e.g. Fridays",
+      "set_time": "TODO: e.g. opening set 10pm - 12am",
+      "vibe": "Dubai's largest open-air club complex at Meydan. 21+, international headliners, house and techno-leaning main room."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Who is arshia.wav?",
+      "a": "arshia.wav is a Dubai-based DJ who plays regular nights at Moe's on the 5th and Soho Garden. His sets are open format: house, afro house, hip-hop and R&B, mixed live for the room."
+    },
+    {
+      "q": "Where does arshia.wav play in Dubai?",
+      "a": "Mainly at Moe's on the 5th, the rooftop venue on the 5th floor of the Sheraton Grand Hotel on Sheikh Zayed Road, and at Soho Garden at Meydan Racecourse. Upcoming dates are listed on the Events page."
+    },
+    {
+      "q": "How do I get on arshia.wav's guest list?",
+      "a": "Use the guest list form on this site or message the WhatsApp number on the Guest List page with your name, Instagram handle, the date and how many people. You'll get a confirmation before the night."
+    },
+    {
+      "q": "Is there a dress code?",
+      "a": "Yes. Both venues run a smart dress code: no sportswear, shorts, flip-flops or caps. Soho Garden is 21+. Arrive early for guaranteed entry on guest list."
+    },
+    {
+      "q": "What music does arshia.wav play?",
+      "a": "Open format built around house and afro house, with hip-hop and R&B drops and latin edits depending on the room and the hour."
+    },
+    {
+      "q": "How do I book arshia.wav for a private event or brand activation?",
+      "a": "Email the bookings address on the Press page or DM @arshia.wav on Instagram with the date, venue and set length."
+    }
+  ],
+  "press_facts": [
+    "Dubai-based DJ, performing under the name arshia.wav",
+    "Regular sets at Moe's on the 5th (Sheraton Grand, Sheikh Zayed Road) and Soho Garden (Meydan)",
+    "Open-format style: house, afro house, hip-hop, R&B, latin edits",
+    "Available for club nights, brand activations, private events and yacht parties in the UAE",
+    "Instagram and TikTok: @arshia.wav"
+  ]
+}
